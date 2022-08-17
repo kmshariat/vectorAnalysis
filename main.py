@@ -4,10 +4,17 @@ import numpy as np
 def component(magnitude, theta):
     x_comp = magnitude*np.cos(theta)
     y_comp = magnitude*np.sin(theta)
-    print(f"V_X {x_comp} and V_y {y_comp}")
+    comp = [x_comp, y_comp]
+    return comp
 
-
+#scaling the whole vector
 def scale(magnitude, theta, scalingFactor):
     x_comp = scalingFactor*magnitude*np.cos(theta)
     y_comp = scalingFactor*magnitude*np.sin(theta)
-    print(f"({x_comp}, {y_comp}) is the new tip of the vector")
+    new_tip = [x_comp, y_comp]
+    return new_tip 
+
+# resultant of two vectors when magnitude of both of them and angle between them is given
+def resultant(magnitude1, magnitude2, alpha):
+    resultant = np.sqrt(magnitude1**2 + magnitude2**2 + 2*magnitude1*magnitude2*np.cos(alpha))
+    return resultant
