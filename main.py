@@ -35,6 +35,13 @@ def angleoftwo(i1, j1, k1, i2, j2, k2):
     angle = np.arccos(dot(i1, j1, k1, i2, j2, k2)/(np.sqrt(i1**2+j1**2+k1**2)*np.sqrt(i2**2+j2**2+k2**2)))*(180/np.pi)
     return angle
 
+#projection of a vector
+def projection(i1, j1, k1, i2, j2, k2):
+    proj_ab = dot(i1, j1, k1, i2, j2, k2)/np.sqrt(i2**2+j2**2+k2**2) #this is the projection of a onto b
+    proj_ba = dot(i2, j2, k2, i1, j1, k1)/np.sqrt(i1**2+j1**2+k1**2) #this is the projection of b onto a
+    projection = [proj_ab, proj_ba]
+    return projection  
+
 #component function gives us the x_component and y_component of a vector.
 def component(magnitude, theta):
     theta = theta*(np.pi/180)
