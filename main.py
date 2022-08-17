@@ -30,6 +30,11 @@ def cross(i1, j1, k1, i2, j2, k2):
     return str(j1*k2-k1*j2)+'+i ' + str(-1*(i1*k2-k1*i2))+'+j '+ str(i1*j2-i2*j1)+'+k '
 print(cross(2,-3,-1,1,4,-2))
 
+#angle between two vectors a and b
+def angleoftwo(i1, j1, k1, i2, j2, k2):
+    angle = np.arccos(dot(i1, j1, k1, i2, j2, k2)/(np.sqrt(i1**2+j1**2+k1**2)*np.sqrt(i2**2+j2**2+k2**2)))*(180/np.pi)
+    return angle
+
 #component function gives us the x_component and y_component of a vector.
 def component(magnitude, theta):
     theta = theta*(np.pi/180)
