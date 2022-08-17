@@ -1,5 +1,9 @@
 import numpy as np
 
+#this returns the magnitude of a vector ai+bj+ck
+def magnitude(i,j,k):
+    return np.sqrt(i**2+j**2+k**2)
+
 #component function gives us the x_component and y_component of a vector.
 def component(magnitude, theta):
     x_comp = magnitude*np.cos(theta)
