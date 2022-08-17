@@ -4,6 +4,14 @@ import numpy as np
 def magnitude(i,j,k):
     return np.sqrt(i**2+j**2+k**2)
 
+#this returns the angle between the vector and the axes
+def angle(i,j,k):
+    alpha = np.arccos(i/np.sqrt(i**2+j**2+k**2))*(180/np.pi)
+    beta = np.arccos(j/np.sqrt(i**2+j**2+k**2))*(180/np.pi)
+    gamma = np.arccos(k/np.sqrt(i**2+j**2+k**2))*(180/np.pi)
+    angles = [alpha, beta, gamma]
+    return angles 
+
 #component function gives us the x_component and y_component of a vector.
 def component(magnitude, theta):
     x_comp = magnitude*np.cos(theta)
