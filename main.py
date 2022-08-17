@@ -16,6 +16,11 @@ def angle(i,j,k):
 def sum(i1, j1, k1, i2, j2, k2):
     return str(i1+i2)+'i '+str(j1+j2)+'j '+ str(k1+k2)+'k '
 
+#this returns the unit vector
+def unit(i,j,k):
+    return str(i/np.sqrt(i**2+j**2+k**2))+'i '+ str(j/np.sqrt(i**2+j**2+k**2)) + 'j '+ str(k/np.sqrt(i**2+j**2+k**2))+ 'k '
+print(unit(2,-6,-3))
+
 #component function gives us the x_component and y_component of a vector.
 def component(magnitude, theta):
     theta = theta*(np.pi/180)
