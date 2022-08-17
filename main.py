@@ -12,6 +12,10 @@ def angle(i,j,k):
     angles = [alpha, beta, gamma]
     return angles 
 
+#this returns the sum of two vectors
+def sum(i1, j1, k1, i2, j2, k2):
+    return str(i1+i2)+'i '+str(j1+j2)+'j '+ str(k1+k2)+'k '
+
 #component function gives us the x_component and y_component of a vector.
 def component(magnitude, theta):
     theta = theta*(np.pi/180)
