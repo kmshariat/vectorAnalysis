@@ -49,3 +49,9 @@ def resultant(magnitude1, magnitude2, alpha):
     alpha = alpha*(np.pi/180)
     resultant = np.sqrt(magnitude1**2 + magnitude2**2 + 2*magnitude1*magnitude2*np.cos(alpha))
     return resultant
+
+#this angleofR function returns the angle of the resultant vector with respect to first vector
+def angleofR(magnitude1, magnitude2, alpha):
+    alpha = alpha*(np.pi/180)
+    theta = np.arctan((magnitude2*np.sin(alpha))/(magnitude1 + magnitude2*np.cos(alpha)))*(180/np.pi)
+    return theta
