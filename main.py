@@ -1,8 +1,9 @@
 import numpy as np
+import numpy.linalg as la
 
 # this returns the magnitude of a vector ai+bj+ck
-def magnitude(i, j, k):
-    return np.sqrt(i**2 + j**2 + k**2)
+def magnitude(*vec):
+    return la.norm(vec)
 
 
 # this returns the angle between the vector and the axes
