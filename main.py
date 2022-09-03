@@ -11,7 +11,7 @@ def angle(*vec):
     mag = magnitude(*vec)
     return [np.rad2deg(np.arccos(x / mag)) for x in vec]
 
-
+#this takes the co-efficients and makes it a vector like form with rectangular unit vectors
 def str_vec(x, y, z):
     return f"{x}î + {y}ĵ + {z}k̂"
 
@@ -35,9 +35,6 @@ def dot(i1, j1, k1, i2, j2, k2):
 # this returns the cross product of two vectors
 def cross(i1, j1, k1, i2, j2, k2):
     return str_vec(j1 * k2 - k1 * j2, -1 * (i1 * k2 - k1 * i2), i1 * j2 - i2 * j1)
-
-
-print(cross(2, -3, -1, 1, 4, -2))
 
 # angle between two vectors a and b
 def angleoftwo(i1, j1, k1, i2, j2, k2):
