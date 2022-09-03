@@ -27,9 +27,6 @@ def unit(i, j, k):
     mag = magnitude(*v)
     return str_vec(*(v / mag if mag != 0 else v))
 
-
-print(unit(2, -6, -3))
-
 # this returns the dot product of two vectors
 def dot(i1, j1, k1, i2, j2, k2):
     return i1 * i2 + j1 * j2 + k1 * k2
