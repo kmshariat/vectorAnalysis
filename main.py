@@ -5,7 +5,6 @@ import numpy.linalg as la
 def magnitude(*vec):
     return la.norm(vec)
 
-
 # this returns the angle between the vector and the axes
 def angle(*vec):
     mag = magnitude(*vec)
@@ -27,10 +26,16 @@ def unit(i, j, k):
     mag = magnitude(*v)
     return str_vec(*(v / mag if mag != 0 else v))
 
+#this returns the unit vector of the vector connecting the tip of two different vectors
+def unitoftwo(i1, j1, k1, i2, j2, k2):
+    new_i = i2-i1
+    new_j = j2-j1
+    new_k = k2-k1 
+    return unit(new_i, new_j, new_k)
+
 # this returns the dot product of two vectors
 def dot(i1, j1, k1, i2, j2, k2):
     return i1 * i2 + j1 * j2 + k1 * k2
-
 
 # this returns the cross product of two vectors
 def cross(i1, j1, k1, i2, j2, k2):
@@ -46,7 +51,6 @@ def angleoftwo(i1, j1, k1, i2, j2, k2):
     )
     return angle
 
-
 # projection of a vector
 def projection(i1, j1, k1, i2, j2, k2):
     proj_ab = dot(i1, j1, k1, i2, j2, k2) / magnitude(
@@ -58,7 +62,6 @@ def projection(i1, j1, k1, i2, j2, k2):
     projection = [proj_ab, proj_ba]
     return projection
 
-
 # component function gives us the x_component and y_component of a vector.
 def component(magnitude, theta):
     theta = np.deg2rad(theta)
@@ -66,7 +69,6 @@ def component(magnitude, theta):
     y_comp = magnitude * np.sin(theta)
     comp = [x_comp, y_comp]
     return comp
-
 
 # scaling the whole vector
 def scale(magnitude, theta, scalingFactor):
@@ -76,7 +78,6 @@ def scale(magnitude, theta, scalingFactor):
     new_tip = [x_comp, y_comp]
     return new_tip
 
-
 # this xscale function only scale in the x axis
 def xscale(magnitude, theta, xscalingfactor):
     theta = np.deg2rad(theta)
@@ -84,7 +85,6 @@ def xscale(magnitude, theta, xscalingfactor):
     y_comp = magnitude * np.sin(theta)
     new_tip = [x_comp, y_comp]
     return new_tip
-
 
 # this yscale function only scale in the y axis
 def yscale(magnitude, theta, yscalingfactor):
@@ -94,7 +94,6 @@ def yscale(magnitude, theta, yscalingfactor):
     new_tip = [x_comp, y_comp]
     return new_tip
 
-
 # resultant of two vectors when magnitude of both of them and angle between them is given
 def resultant(magnitude1, magnitude2, alpha):
     alpha = np.deg2rad(alpha)
@@ -102,7 +101,6 @@ def resultant(magnitude1, magnitude2, alpha):
         magnitude1**2 + magnitude2**2 + 2 * magnitude1 * magnitude2 * np.cos(alpha)
     )
     return resultant
-
 
 # this angleofR function returns the angle of the resultant vector with respect to first vector
 def angleofR(magnitude1, magnitude2, alpha):
